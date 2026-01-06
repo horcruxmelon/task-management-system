@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Brand Colors - The Olive Trees Palette */
+  --primary: #556b2f;
+  /* Dark Olive Green */
+  --primary-hover: #3e4f22;
+  /* Deep forest green */
+  --secondary: #b8860b;
+  /* Dark Goldenrod / Ochre - for warmth */
+  --accent: #87ceeb;
+  /* Sky Blue - swirling sky elements */
+
+  --success: #6b8e23;
+  /* Olive Drab */
+  --danger: #cd5c5c;
+  /* Indian Red - muted earthy red */
+  --warning: #daa520;
+  /* Goldenrod */
+
+  /* Backgrounds - Canvas/Organic feel */
+  --bg-main: #fdfbf7;
+  /* Very pale warm linen/off-white */
+  --bg-card: #fffff0;
+  /* Ivory */
+  --bg-hover: #f0fff0;
+  /* Subtle Honeydew tint */
+
+  /* Text */
+  --text-main: #2f4f4f;
+  /* Dark Slate Gray - softer than black, organic */
+  --text-muted: #5f6f6f;
+  /* Muted greenish-gray */
+  --text-light: #8f9f9f;
+  --text-inverse: #ffffff;
+  /* For buttons */
+
+  /* Borders & Shadows */
+  --border-subtle: #d2b48c;
+  /* Tan/Bisque - Earthy border */
+  --border-focus: #b8860b;
+  /* Golden focus ring */
+
+  /* Soft, diffused shadows for "Organic" feel */
+  --shadow-sm: 0 1px 2px 0 rgba(85, 107, 47, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(85, 107, 47, 0.1), 0 2px 4px -1px rgba(85, 107, 47, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(85, 107, 47, 0.1), 0 4px 6px -2px rgba(85, 107, 47, 0.05);
+  --shadow-lift: 0 20px 25px -5px rgba(85, 107, 47, 0.1), 0 10px 10px -5px rgba(85, 107, 47, 0.04);
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Transitions */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--bg-main);
+  /* Subtle grain or pattern could go here, but solid is cleaner for now */
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+/* Card Styles - "Organic Card" */
+.glass-panel {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.glass-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-focus);
+}
+
+/* Form Styles */
+.input-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  background: var(--bg-main);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(101, 163, 13, 0.1);
+  /* Primary color ring */
+}
+
+/* Button Styles */
+.btn-primary {
+  width: 100%;
+  padding: 1rem;
+  background: var(--primary);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-inverse);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Status Badges */
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-xl);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Typography Utilities */
+.text-gradient {
+  background: linear-gradient(135deg, var(--text-main), var(--text-muted));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Toast Notification Styles - Light Theme */
+.toast-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.toast-notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  min-width: 360px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-lg);
+  animation: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-notification.success {
+  border-left: 4px solid var(--success);
+}
+
+.toast-notification.error {
+  border-left: 4px solid var(--danger);
+}
+
+.toast-notification.warning {
+  border-left: 4px solid var(--warning);
+}
+
+.toast-title {
+  color: var(--text-main);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.toast-message {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Utilities */
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
